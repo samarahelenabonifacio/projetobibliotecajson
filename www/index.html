@@ -12,50 +12,71 @@
 
         <style>
             body{
-                 background-color:black;
-                } 
+                 background-color: black;
+                }
+            .topo{
+                width: 60vw;
+                text-align: center;                                
+                float: left;
+                margin-left: 16vw;
+                font-size: 8vw;
+                margin-top: 2vw;
+            }
+            .foto img{
+                width: 15vw;
+                height: 15vw;
+                border-radius: 100%;                
+                float: left;     
+                margin-top: 2vw; 
+            }
+
+            .fonte{
+                font-family: Arial;
+            }
         </style>
     </head>
     <body>
-        <div class="container dados">
+        <div class="container dados semfoto">
             <div class="row">
-                <div class="col-12 text-light bg-primary text-center pt-3 pb-3"><h1>Autenticar</h1>
+                <div class="col-12 text-light bg-primary pt-1 pb-1">
+                    <p class="topo fonte">Login</p>
+                    <span class="foto" id="foto"></span>
                 </div>
             </div>
+
             <div class="row mt-3">
-              <div class="col text-light"><h2>Usuário:</h2>
+              <div class="col text-light fonte"><h2>Usuário:</h2>
               </div>
             </div>
             <div class="row mt-3">
               <div class="col">
                 <div class="form-group">
-                  <input class="form-control" id="usuario" type="text">
+                  <input class="form-control fonte" id="usuario" type="text" placeholder="exemplo@gmail.com">
                 </div>
               </div>
             </div>
             <div class="row mt-3">
-              <div class="col text-light"><h2>Senha:</h2>
+              <div class="col text-light fonte"><h2>Senha:</h2>
               </div>
             </div>
             <div class="row mt-3">
               <div class="col">
                 <div class="form-group">
-                  <input class="form-control" id="senha" type="password">
+                  <input class="form-control fonte" id="senha" type="password" placeholder="exemplo123">
                 </div>
               </div>
             </div>
             <div class="row mt-3">
               <div class="col">
                 <div class="d-grid gap-2">
-                  <button class="btn btn-primary" id="entrar"><h2>Entrar</h2></button>
+                  <button class="btn btn-primary fonte" id="entrar"><h2>Entrar</h2></button>
                 </div>
               </div>
             </div>
-            <div class="row mt-3">
-              <div class="col">
-                  <div class="d-grid gap-2">
-                      <button class="btn btn-primary" id="recsenha"><h6>Recuperar Senha</h6></button>
-                  </div>
+            <br>
+            <div class="row text-light">
+              <div class="col fonte">
+                  <span id="recsenha" style="text-align: right; float: right;">Esqueci a senha.</span>
               </div>
             </div>
 

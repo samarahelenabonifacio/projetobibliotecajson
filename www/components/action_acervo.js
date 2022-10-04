@@ -1,21 +1,32 @@
 window.onload = function(){
-    var url = "http://profrodolfo.com.br/biblioteca/livro.php"
+    let usuario = JSON.parse(localStorage.usuario);
+    let perfil = document.getElementById('perfil');
+    let dados = '<img src="'+usuario.perfil+'">';
+    perfil.innerHTML = dados;
+
+    perfil.addEventListener('click', function(){
+        window.location.replace('perfil.html');
+    });
+    
+    var url = "https://oscorvosdeodin.profrodolfo.com.br/livro.php";
 
     fetch(url)
     .then(resposta=> {
         return resposta.json();
     })
     .then(function (json){
-        var d = document.querySelector('.dados');
+        var d = document.querySelector('.acervo');
         var texto = '';
         for(i = 0; i < json.length; i++){
+            // console.log(json[i]);
             texto += '<div class="row">';
-            texto += '<div class="col-5">';
-            texto += '<img class="img-fluid" src="https://profrodolfo.com.br/biblioteca/livro.php'+json[i].foto+'">';
+            texto += '<div class="col-5 text-light fonte">';
+            texto += '<img class="img-fluid" src="https://oscorvosdeodin.profrodolfo.com.br/imgs/'+json[i].cd+"/"+json[i].capa+'">';
             texto += '</div>';
-            texto += '<div class="col-7">';
-            texto += '<h1>'+json[i].nome+'</h1>';
-            texto += '<h3>'+json[i].valor+'</h3>';
+            texto += '<div class="col-7 text-light fonte">';
+            texto += '<h1>'+json[i].titulo+'</h1>';
+            texto += '<h3>'+json[i].isbn+'</h3>';
+            // texto += '<h3>'+json[i].id_genero.nome+'</h3>';
             texto += '</div>';
             texto += '</div>';
             texto += '<br>';
@@ -23,17 +34,21 @@ window.onload = function(){
         d.innerHTML += texto;
     }).catch();
 
-    const acervoanterior = document.querySelector("#acervoanterior");
-    const acervomenu = document.querySelector("#acervomenu");
-    const acervoproximo = document.querySelector("#acervoproximo");
+    const pag1 = document.querySelector("#pag1");
+    const pag2 = document.querySelector("#pag2"); 
+    const pag3 = document.querySelector("#pag3"); 
+    const pag4 = document.querySelector("#pag4"); 
 
-    acervoanterior.addEventListener('click', function(){
-        window.location.replace("filter.html");
+    pag1.addEventListener('click', function(){
+        window.location.replace("menu.html");
     });
-    acervomenu.addEventListener('click', function(){
-      window.location.replace("menu.html");
-    });
-    acervoproximo.addEventListener('click', function(){
+    pag2.addEventListener('click', function(){
         window.location.replace("rank.html");
+    });
+    pag3.addEventListener('click', function(){
+        window.location.replace("fila.html");
+    });
+    pag4.addEventListener('click', function(){
+        window.location.replace("sistem.html");
     });
 }

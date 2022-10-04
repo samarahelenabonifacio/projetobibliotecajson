@@ -12,49 +12,87 @@
 
         <style>
             body{
-                 background-color:black;
+                 background-color: black;
                 } 
+            .foto img{
+                width: 15vw;
+                height: 15vw;
+                border-radius: 100%;                
+                float: left;     
+                margin-top: 2vw;           
+            }
+            .topo{
+                width: 60vw;
+                text-align: center;                                
+                float: left;
+                margin-left: 16vw;
+                font-size: 8vw;
+                margin-top: 2vw;
+            }
+            .rodape{
+                bottom: 0;
+                position: fixed;
+                width: 100vw;
+                padding: 0;
+            }
+            item{
+                margin: 0;
+                padding: 0;
+            }
+            .menu{
+                width: 18vw;
+                height: 18vw;
+                text-align: center;
+            }
+
+            .fonte{
+                font-family: Arial;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-light bg-primary text-center pt-3 pb-3"><h1>Sistema de Avaliação</h1>
+                <div class="col-12 text-light bg-primary pt-1 pb-1">
+                    <p class="topo fonte">Avaliação</p> 
+                    <span class="foto" id="perfil"></span>
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col text-light"><h2>Livro:</h2>
+                <div class="col text-light fonte"><h2>Livro:</h2>
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col text-light"><h2>Avalie:</h2>
+                <div class="col text-light fonte"><h2>Avalie:</h2>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col text-light">
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" id="avaliar"><h2>Avaliar</h2></button>
+                        <button class="btn btn-primary fonte" id="avaliar"><h2>Avaliar</h2></button>
                     </div>
                 </div>
             </div>
 
-            <div class="row mt-3">
-                <div class="col-4 text-light">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" id="sistemanterior"><h6>Anterior</h6></button>
-                    </div>
+            <div class="row rodape">
+                <div class="col-3 text-light text-center bg-primary pt-1 item fonte" id="pag1">
+                    <img src="imgs/menu.png" class="menu">
+                    Menu
                 </div>
-                <div class="col-4 text-light">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" id="sistemmenu"><h6>Menu</h6></button>
-                    </div>
+                <div class="col-3 text-light text-center bg-primary pt-1 item fonte" id="pag2">
+                    <img src="imgs/acervo.png" class="menu">
+                    Acervo
                 </div>
-                <div class="col-4 text-light">
-                    <div class="d-grid gap-2">
-                        <button class="btn btn-primary" id="sistemproximo"><h6>Próximo</h6></button>
-                    </div>
+                <div class="col-3 text-light text-center bg-primary pt-1 item fonte" id="pag3">
+                    <img src="imgs/rank.png" class="menu">
+                    Ranking
+                </div>
+                <div class="col-3 text-light text-center bg-primary pt-1 item fonte" id="pag4">
+                    <img src="imgs/fila.png" class="menu">
+                    Fila
                 </div>
             </div>
+
         </div>
     </body>
 </html>

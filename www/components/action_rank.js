@@ -1,15 +1,28 @@
 window.onload = function(){
-    const rankanterior = document.querySelector("#rankanterior");
-    const rankmenu = document.querySelector("#rankmenu");
-    const rankproximo = document.querySelector("#rankproximo");
+    let usuario = JSON.parse(localStorage.usuario);
+    let perfil = document.getElementById('perfil');
+    let dados = '<img src="'+usuario.perfil+'">';
+    perfil.innerHTML = dados;
 
-    rankanterior.addEventListener('click', function(){
-        window.location.replace("acervo.html");
+    perfil.addEventListener('click', function(){
+        window.location.replace('perfil.html');
     });
-    rankmenu.addEventListener('click', function(){
+
+    const pag1 = document.querySelector("#pag1");
+    const pag2 = document.getElementById("pag2"); 
+    const pag3 = document.querySelector("#pag3"); 
+    const pag4 = document.querySelector("#pag4"); 
+
+    pag1.addEventListener('click', function(){
         window.location.replace("menu.html");
     });
-    rankproximo.addEventListener('click', function(){
+    pag2.addEventListener('click', function(){
+        window.location.replace("acervo.html");
+    });
+    pag3.addEventListener('click', function(){
         window.location.replace("fila.html");
+    });
+    pag4.addEventListener('click', function(){
+        window.location.replace("sistem.html");
     });
 }
